@@ -104,7 +104,7 @@ submit_btn.addEventListener('click',function(){
     alert('inter correct data')
   }else if(Page.innerHTML!=''){
     alert('inter correct data')
-  }else if(nameInpout.value==''|emaillnpout.value==""|phoneenpout.value==''|ageenpout.value==''|passworddnpout.value==''|repasswordInpout.value==''){
+  }else if(nameInpout.value==''||emaillnpout.value==""||phoneenpout.value==''||ageenpout.value==''||passworddnpout.value==''||repasswordInpout.value==''){
     alert('please inter all data')
   }
 })
