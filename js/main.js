@@ -10,6 +10,121 @@ let firstLetterInput=document.querySelector('#firstLetter')
 let defualtRowShow=document.querySelector('#defualt')
 let contactBtn=document.querySelector('#nav-SUPERHERO-tab')
 let searchBtn=document.querySelector('#nav-MMORPG-tab')
+
+let emailRGX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+let nameregx=/^[a-zA-Z\s]+$/
+let ageregx=/^[1-9][0-9]{0,2}$/
+let passwordrgex=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+let phoneregx=/^(002|\+2)?01[0125][0-9]{8}$/
+let emaillnpout=document.querySelector('#emaill')
+let phoneenpout=document.querySelector('#phonee')
+let ageenpout=document.querySelector('#agee')
+let passworddnpout=document.querySelector('#passwordd')
+let repasswordInpout=document.querySelector('#repassword')
+let nameInpout=document.querySelector('#namee')
+let Pemail=document.querySelector('.email')
+let Pphone=document.querySelector('.phone')
+let Page=document.querySelector('.age')
+let Ppassword=document.querySelector('.password')
+let Prepassord=document.querySelector('.repassord')
+let Pname=document.querySelector('.name')
+let submit_btn=document.querySelector('.submit_btn')
+// Enter valid password *Minimum eight characters, at least one letter and one number:*
+// Special characters and numbers not allowed
+// Pname.innerHTML="Email not valid *exemple@yyy.zzz"
+
+nameInpout.addEventListener("input",function(){
+  if(nameInpout.value==''){
+
+    Pname.innerHTML="is required"
+  }else if(nameregx.test(nameInpout.value)){
+    Pname.innerHTML=""
+  }else{
+    Pname.innerHTML="please enter vali name Special characters and numbers not allowed"
+  }
+})
+phoneenpout.addEventListener("input",function(){
+  if(phoneenpout.value==''){
+    Pphone.innerHTML="is required"
+  }else if(phoneregx.test(phoneenpout.value)){
+    Pphone.innerHTML=""
+  }else{
+    Pphone.innerHTML="please enter vali number"
+  }
+})
+ageenpout.addEventListener("input",function(){
+  if(ageenpout.value==''){
+    Page.innerHTML="is required"
+  }else if(ageregx.test(ageenpout.value)){
+    Page.innerHTML=""
+  }else{
+    Page.innerHTML="please enter vali age"
+  }
+})
+emaillnpout.addEventListener("input",function(){
+  if(emaillnpout.value==''){
+    Pemail.innerHTML="is required"
+  }else if(emailRGX.test(emaillnpout.value)){
+    Pemail.innerHTML=""
+  }else{
+    Pemail.innerHTML="Email not valid *exemple@yyy.zzz"
+  }
+})
+
+// Enter valid password *Minimum eight characters, at least one letter and one number:*
+
+passworddnpout.addEventListener("input",function(){
+  if(passworddnpout.value==''){
+    Ppassword.innerHTML="is required"
+  }else if(passwordrgex.test(passworddnpout.value)){
+    Ppassword.innerHTML=""
+  }else{
+    Ppassword.innerHTML="Enter valid password *Minimum eight characters, at least one letter and one number:*"
+  }
+})
+repasswordInpout.addEventListener("input",function(){
+  if(repasswordInpout.value==''){
+    Prepassord.innerHTML="is required"
+  }else if(passwordrgex.test(repasswordInpout.value)){
+    Prepassord.innerHTML=""
+  }else{
+    Prepassord.innerHTML="Enter valid password *Minimum eight characters, at least one letter and one number:*"
+  }
+})
+submit_btn.addEventListener('click',function(){
+  if(Pname.innerHTML!=''){
+    alert('inter correct data')
+  }else if(Pphone.innerHTML!=''){
+    alert('inter correct data')
+  }else if(Ppassword.innerHTML!=''){
+    alert('inter correct data')
+  }else if(Prepassord.innerHTML!=''){
+    alert('inter correct data')
+  }else if(Pemail.innerHTML!=''){
+    alert('inter correct data')
+  }else if(Page.innerHTML!=''){
+    alert('inter correct data')
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 searchBtn.addEventListener('click',function(){
   document.querySelector('.firstLoad').classList.remove('active')
   document.querySelector('.firstLoad').classList.remove('show')
@@ -23,7 +138,7 @@ async function defualtPage(){
   let carton=""
   let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
   let result = await response.json();
-  console.log(result)
+ 
   for (let i = 0; i < result.meals?.length; i++) {
     carton +=`
             <div class="col-md-3 mt-4">
@@ -48,7 +163,7 @@ async function display(){
   let carton=""
   let response = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
   let result = await response.json();
-  console.log(result.categories[0])
+  
 
   for (let i = 0; i < result.categories.length; i++) {
     carton +=`
@@ -93,7 +208,7 @@ async function areaCat(act){
   let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${cat}`);
   let result = await response.json();
   
-console.log(result)
+
   for (let i = 0; i < result.meals.length; i++) {
     carton +=`
             <div class="col-md-3">
@@ -161,7 +276,7 @@ async function displayIngredientsChooces(act){
   let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${cat}`);
   let result = await response.json();
   
-console.log(result)
+
   for (let i = 0; i < result.meals.length; i++) {
     carton +=`
             <div class="col-md-3">
@@ -188,7 +303,7 @@ mealNameInput.addEventListener('input',async function(e){
 let carton=""
 let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${e.target.value}`);
 let result = await response.json();
-console.log(result)
+
 for (let i = 0; i < result.meals?.length; i++) {
   carton +=`
           <div class="col-md-3">
@@ -238,7 +353,7 @@ firstLetterInput.addEventListener('input',async function(e){
   async function idd(id){
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     let result = await response.json();
-    console.log(result)
+   
     let tages=[]
     if(result.meals[0].strTags){
       tages=result.meals[0].strTags?.split(',')
@@ -300,7 +415,7 @@ async function filterCategories(act){
   let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`);
   let result = await response.json();
   
-console.log(result)
+
   for (let i = 0; i < result.meals.length; i++) {
     carton +=`
             <div class="col-md-3">
@@ -320,101 +435,6 @@ console.log(result)
   // 
 }
 
-let emailRGX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-let nameregx=/^[a-zA-Z\s]+$/
-let ageregx=/^[1-9][0-9]{0,2}$/
-let passwordrgex=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-let phoneregx=/^(002|\+2)?01[0125][0-9]{8}$/
-let emaillnpout=document.querySelector('#emaill')
-let phoneenpout=document.querySelector('#phonee')
-let ageenpout=document.querySelector('#agee')
-let passworddnpout=document.querySelector('#passwordd')
-let repasswordInpout=document.querySelector('#repassword')
-let nameInpout=document.querySelector('#namee')
-let Pemail=document.querySelector('.email')
-let Pphone=document.querySelector('.phone')
-let Page=document.querySelector('.age')
-let Ppassword=document.querySelector('.password')
-let Prepassord=document.querySelector('.repassord')
-let Pname=document.querySelector('.name')
-let submit_btn=document.querySelector('.submit_btn')
-// Enter valid password *Minimum eight characters, at least one letter and one number:*
-// Special characters and numbers not allowed
-// Pname.innerHTML="Email not valid *exemple@yyy.zzz"
-
-nameInpout.addEventListener("input",function(){
-  if(nameInpout.value=''){
-    console.log("kjscfiasc")
-    Pname.innerHTML="is required"
-  }else if(nameregx.test(nameInpout.value)){
-    Pname.innerHTML=""
-  }else{
-    Pname.innerHTML="please enter vali name Special characters and numbers not allowed"
-  }
-})
-phoneenpout.addEventListener("input",function(){
-  if(phoneenpout.value=''){
-    Pphone.innerHTML="is required"
-  }else if(phoneregx.test(phoneenpout.value)){
-    Pphone.innerHTML=""
-  }else{
-    Pphone.innerHTML="please enter vali number"
-  }
-})
-ageenpout.addEventListener("input",function(){
-  if(ageenpout.value=''){
-    Page.innerHTML="is required"
-  }else if(ageregx.test(ageenpout.value)){
-    Page.innerHTML=""
-  }else{
-    Page.innerHTML="please enter vali age"
-  }
-})
-emaillnpout.addEventListener("change",function(){
-  if(emaillnpout.value=''){
-    Pemail.innerHTML="is required"
-  }else if(emailRGX.test(emaillnpout.value)){
-    Pemail.innerHTML=""
-  }else{
-    Pemail.innerHTML="Email not valid *exemple@yyy.zzz"
-  }
-})
-
-// Enter valid password *Minimum eight characters, at least one letter and one number:*
-
-passworddnpout.addEventListener("input",function(){
-  if(passworddnpout.value=''){
-    Ppassword.innerHTML="is required"
-  }else if(passwordrgex.test(passworddnpout.value)){
-    Ppassword.innerHTML=""
-  }else{
-    Ppassword.innerHTML="Enter valid password *Minimum eight characters, at least one letter and one number:*"
-  }
-})
-repasswordInpout.addEventListener("input",function(){
-  if(repasswordInpout.value=''){
-    Prepassord.innerHTML="is required"
-  }else if(passwordrgex.test(repasswordInpout.value)){
-    Prepassord.innerHTML=""
-  }else{
-    Prepassord.innerHTML="Enter valid password *Minimum eight characters, at least one letter and one number:*"
-  }
-})
-submit_btn.addEventListener('click',function(){
-  if(Pname.innerHTML!=''){
-    alert('inter correct data')
-  }else if(Pphone.innerHTML!=''){
-    alert('inter correct data')
-  }else if(Ppassword.innerHTML!=''){
-    alert('inter correct data')
-  }else if(Prepassord.innerHTML!=''){
-    alert('inter correct data')
-  }else if(Pemail.innerHTML!=''){
-    alert('inter correct data')
-  }else if(Page.innerHTML!=''){
-    alert('inter correct data')
-  }
-})
 // //loader
 
 
