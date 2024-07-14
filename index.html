@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+   
+</head>
+<body  class="">
+
+    <div id="loading" class="">
+        <span class="loader  m-auto text-white"></span>
+    </div>
+
+
+
+    
+    
+    <nav
+    class="navbar navbar-expand-xl navbar-dark bg-white  position-fixed h-100 change"
+    >
+    <div class="bg-black h-100 p-0 close position-relative  " >
+        <div class="container  d-block pe-5 ">
+            <!-- <a class="navbar-brand " href="#">GAME REVIEWS</a> -->
+            <div class="collapse navbar-collapse d-block" id="collapsibleNavId">
+                <ul class="navbar-nav  mt-lg-0 d-block">
+                    <div class="nav nav-tabs d-block mt-3 buttomss" id="nav-tab" role="tablist">
+                        
+                            <button class="nav-link text-white linkClose wow fadeInUp"  id="nav-MMORPG-tab" data-bs-toggle="tab" data-bs-target="#nav-MMORPG" type="button" role="tab" aria-controls="nav-MMORPG" aria-selected="true">Search</button>
+                    
+                            <button class="nav-link text-white linkClose wow fadeInUp" id="nav-SHOOTER-tab" data-bs-toggle="tab" data-bs-target="#nav-SHOOTER" type="button" role="tab" aria-controls="nav-SHOOTER" aria-selected="false">Categories</button>
+                            <button class="nav-link text-white linkClose wow fadeInUp" id="nav-SAILING-tab" data-bs-toggle="tab" data-bs-target="#nav-SAILING" type="button" role="tab" aria-controls="nav-SAILING" aria-selected="false">Area</button>
+                            <button class="nav-link text-white linkClose wow fadeInUp" id="nav-PERMADEATH-tab" data-bs-toggle="tab" data-bs-target="#nav-PERMADEATH" type="button" role="tab" aria-controls="nav-PERMADEATH" aria-selected="false">Ingredients</button>
+                            <button class="nav-link text-white linkClose wow fadeInUp" id="nav-SUPERHERO-tab" data-bs-toggle="tab" data-bs-target="#nav-SUPERHERO" type="button" role="tab" aria-controls="nav-SUPERHERO" aria-selected="false">Contact Us</button>
+                        
+                    </div>
+                </ul>
+                
+            </div>
+        </div>
+        <div class="p-3 position-absolute bottom-0 start-0">
+            <i class="fa-brands fa-facebook text-white"></i>
+            <i class="fa-brands fa-twitter text-white"></i>
+            <i class="fa-solid fa-globe text-white"></i>
+            <p class="text-white ">Copyright Â© 2019 All Rights </p>
+        </div>
+    </div>
+    <div class=" ">
+        <div class="position-absolute top-0 pt-3 imgg text-end">
+            <img src="image/images.jpg" class="w-100 " alt="">
+        </div>
+        <div class="text-center ">
+            <i class="fa-solid fa-xmark d-none fs-1 me-3 ps-1 text-black"></i>
+            <i class="fa-solid fa-bars fs-2 me-3 ps-1 text-black"></i>
+        </div>
+         
+         <div class=" position-absolute bottom-0">
+            <i class="fa-solid fa-globe d-block fs-5 mb-2 ps-2"></i>
+            
+            <i class="fa-solid fa-share-nodes fs-5 ps-2"></i>
+         </div>
+    </nav>
+   
+
+
+
+    
+    
+    <div class="tab-content " id="nav-tabContent">
+        <div class="tab-pane firstLoad fade  show active" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="container">
+                <div class="row" id="defualt">
+                    
+                        <span class="loader"></span>
+                   
+                    
+                </div>
+              
+         </div>
+                
+        </div>
+    <div class="tab-pane fade " id="nav-MMORPG" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="container">
+            <div class="row p-5 mx-5" id="mmorpg">
+                <div class="col-md-6"><input required type="text" id="mealName" placeholder="Search by name" class="w-100 border rounded p-2  bg-color text-white"></div>
+                        <div class="col-md-6"><input required type="text"   id="firstLetter" placeholder="Search by first letter" class="w-100 border rounded p-2  bg-color text-white onealphaonly"></div>
+                        <div class="row g-4 mt-5 searchResult">
+                            
+                        </div>
+                        <span class="loader "></span>
+                       
+            </div>
+     </div>
+            
+    </div>
+    <div class="tab-pane fade " id="nav-SHOOTER" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="container pt-5">
+        <div class="row pt-5 g-4" id="shooter">
+            
+            
+            <span class="loader"></span>
+          
+        </div>
+    </div>
+    </div>
+    <div class="tab-pane fade" id="nav-SAILING" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="container pt-5">
+            <div class="row pt-5 g-4 " id="sailing">
+                
+     
+                
+                <span class="loader "></span>
+            </div>
+        
+        </div>
+    </div>
+    <div class="tab-pane fade show" id="nav-PERMADEATH" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="container pt-5">
+            <div class="row pt-5 g-4" id="permadeath">
+                <span class="loader "></span>
+            </div>
+    
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-SUPERHERO" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="container pt-5">
+            <div class="row p-5 mt-5 g-4" id="superhero">
+
+                <div class="col-md-6 ps-5">
+                    <input required type="text" id="namee" placeholder="Enter your name" class="w-100 border rounded p-2  ">
+                    <p class="bg-danger p-0 m-0 text-white rounded-end-3 name text-white"></p>
+                </div>
+                <div class="col-md-6 pe-5">
+                    <input required type="email" id="emaill"  placeholder="Enter your email" class="w-100 border rounded p-2  ">
+                    <p class="bg-danger p-0 m-0 text-white rounded-end-3 email"></p>
+
+               </div>
+                <div class="col-md-6 ps-5">
+                    <input required type="tel" id="phonee"  placeholder="Enter your phone" class="w-100 border rounded p-2  ">
+                    <p class="bg-danger p-0 m-0 text-white rounded-end-3 phone"></p>
+
+                </div>
+                <div class="col-md-6 pe-5">
+                    <input required type="number" id="agee"  placeholder="Enter your age" class="w-100 border rounded p-2 ">
+                    <p class="bg-danger p-0 m-0 text-white rounded-end-3 age"></p>
+
+                </div>
+                <div class="col-md-6 ps-5">
+                    <input required type="password" id="passwordd"  placeholder="Enter your password" class="w-100 border rounded p-2 ">
+                    <p class="bg-danger p-0 m-0 text-white rounded-end-3 password"></p>
+                </div>
+                <div class="col-md-6 pe-5">
+                    <input required type="password" id="repassword" placeholder="Enter your repassword" class="w-100 border rounded p-2 ">
+                    <p class="bg-danger p-0 m-0 text-white rounded-end-3 repassword"></p>
+                </div>
+                <div class="col-md-12 text-center"><button class="btn border text-danger border-danger submit_btn">Submit</button></div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade mt-0 " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content w-100 ">
+            <div class="modal-header text-white ">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+                <div class="modal-body text-white p-0 h-100 w-100">
+                    <div class="layout  ">
+                        <div class="container">
+                            <div class="row carton_detailes pt-4 ">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+    </div>
+  </div>
+    <script src="js/jquery-3.6.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script  src="js/main.js"></script>
+
+
+</body>
+</html>
