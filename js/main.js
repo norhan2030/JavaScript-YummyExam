@@ -37,37 +37,58 @@ nameInpout.addEventListener("input",function(){
   if(nameInpout.value==''){
 
     Pname.innerHTML="is required"
+    Pname.classList.add('p-2','my-1')
   }else if(nameregx.test(nameInpout.value)){
     Pname.innerHTML=""
   }else{
     Pname.innerHTML="please enter vali name Special characters and numbers not allowed"
+    Pname.classList.add('p-2','my-1')
+
   }
 })
 phoneenpout.addEventListener("input",function(){
   if(phoneenpout.value==''){
     Pphone.innerHTML="is required"
+    Pphone.classList.add('p-2')
+    Pphone.classList.add('my-1')
   }else if(phoneregx.test(phoneenpout.value)){
     Pphone.innerHTML=""
   }else{
     Pphone.innerHTML="please enter vali number"
+    Pphone.classList.add('p-2')
+    Pphone.classList.add('my-1')
+
+
   }
 })
 ageenpout.addEventListener("input",function(){
   if(ageenpout.value==''){
     Page.innerHTML="is required"
+    Page.classList.add('p-2')
+    Page.classList.add('my-1')
+
   }else if(ageregx.test(ageenpout.value)){
     Page.innerHTML=""
   }else{
     Page.innerHTML="please enter vali age"
+    Page.classList.add('p-2')
+    Page.classList.add('my-1')
+
   }
 })
 emaillnpout.addEventListener("input",function(){
   if(emaillnpout.value==''){
     Pemail.innerHTML="is required"
+    Pemail.classList.add('p-2')
+    Pemail.classList.add('p-2')
+
   }else if(emailRGX.test(emaillnpout.value)){
     Pemail.innerHTML=""
   }else{
     Pemail.innerHTML="Email not valid *exemple@yyy.zzz"
+    Pemail.classList.add('p-2')
+    Pemail.classList.add('my-1')
+
   }
 })
 
@@ -76,19 +97,31 @@ emaillnpout.addEventListener("input",function(){
 passworddnpout.addEventListener("input",function(){
   if(passworddnpout.value==''){
     Ppassword.innerHTML="is required"
+    Ppassword.classList.add('p-2')
+    Ppassword.classList.add('my-1')
+
   }else if(passwordrgex.test(passworddnpout.value)){
     Ppassword.innerHTML=""
   }else{
     Ppassword.innerHTML="Enter valid password *Minimum eight characters, at least one letter and one number:*"
+    Ppassword.classList.add('p-2')
+    Ppassword.classList.add('my-1')
+
   }
 })
 repasswordInpout.addEventListener("input",function(){
   if(repasswordInpout.value==''){
     Prepassord.innerHTML="is required"
+    Prepassord.classList.add('p-2')
+    Prepassord.classList.add('my-1')
+
   }else if(passwordrgex.test(repasswordInpout.value)){
     Prepassord.innerHTML=""
   }else{
     Prepassord.innerHTML="Enter valid password *Minimum eight characters, at least one letter and one number:*"
+    Prepassord.classList.add('p-2')
+    Prepassord.classList.add('my-1')
+
   }
 })
 submit_btn.addEventListener('click',function(){
@@ -104,8 +137,10 @@ submit_btn.addEventListener('click',function(){
     alert('inter correct data')
   }else if(Page.innerHTML!=''){
     alert('inter correct data')
-  }else if(nameInpout.value==''||emaillnpout.value==""||phoneenpout.value==''||ageenpout.value==''||passworddnpout.value==''||repasswordInpout.value==''){
-    alert('please inter all data')
+  }
+  if(nameInpout.value=='' || phoneenpout.value=='' || ageenpout.value=='' ||emaillnpout.value=='' ||passworddnpout.value==''||repasswordInpout.value==''){
+    alert('please inter full data')
+
   }
 })
 
